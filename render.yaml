@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: binance-funding-rate-bot
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: CHECK_INTERVAL
+        value: 300
+      - key: THRESHOLD
+        value: 0.01
